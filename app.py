@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS  # Import CORS for frontend-backend communication
 
 # Fetch API Key from Environment Variable
-API_KEY = GENAI_API_KEY
+API_KEY = os.getenv(GENAI_API_KEY)
 
 if not API_KEY:
     raise ValueError("API key is missing! Set the GENAI_API_KEY environment variable.")
